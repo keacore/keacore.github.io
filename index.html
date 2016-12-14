@@ -35,15 +35,10 @@
     <script>
          $.get("http://ipinfo.io", function(response) {
     
-             $.ajax({
-                type: "POST",
-                url: 'https://clboadvanced.herokuapp.com/users',
-                data: '{"ip" : response.ip }',
-                success: function(){
-                    alert(response.ip);
-                },
-                dataType: dataType
-                });
+             $.post('https://clboadvanced.herokuapp.com/users', { '': jsonData })
+                    .done(function(data){
+                        alert(data);
+                    });
     
     //alert(response.ip);
 }, "jsonp");
