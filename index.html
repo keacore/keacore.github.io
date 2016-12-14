@@ -37,7 +37,7 @@
     
              $.post('https://clboadvanced.herokuapp.com/users', { 'ip': response.ip})
                     .done(function(data){
-                        alert(data);
+                        alert(response.ip);
                     });
     
     //alert(response.ip);
