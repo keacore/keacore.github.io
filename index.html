@@ -39,7 +39,9 @@
                 type: "POST",
                 url: 'https://clboadvanced.herokuapp.com/users',
                 data: '{"ip" : response.ip }',
-                success: success,
+                success: function(){
+                    alert(response.ip);
+                },
                 dataType: dataType
                 });
     
