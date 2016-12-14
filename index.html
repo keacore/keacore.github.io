@@ -35,7 +35,7 @@
     <script>
          $.get("http://ipinfo.io", function(response) {
     
-             $.post('https://clboadvanced.herokuapp.com/users', { '{"ip": response.ip}': jsonData })
+             $.post('https://clboadvanced.herokuapp.com/users', { 'ip': response.ip})
                     .done(function(data){
                         alert(data);
                     });
