@@ -29,14 +29,21 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    <script
-  src="https://code.jquery.com/jquery-3.1.1.min.js"
-  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-  crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+        crossorigin="anonymous"></script>
 
     <script>
          $.get("http://ipinfo.io", function(response) {
-    alert(response.ip);
+    
+             $.ajax({
+                type: "POST",
+                url: 'https://clboadvanced.herokuapp.com/users',
+                data: '{"ip" : response.ip }',
+                success: success,
+                dataType: dataType
+                });
+    
+    //alert(response.ip);
 }, "jsonp");
     </script>
 
